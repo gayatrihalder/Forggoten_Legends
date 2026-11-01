@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://b52p27lbitr3i"]
+
+[ext_resource type="Script" path="res://GUI/pause_menu/inventory/scripts/inventory_slot_ui.gd" id="1_nxbvo"]
+[ext_resource type="Texture2D" uid="uid://d2ecnuurkfnvv" path="res://Items/Sprites/GemGreen.png" id="1_opq80"]
+[ext_resource type="FontFile" uid="uid://c764wo8r0kdvp" path="res://Assets/NormalFont.ttf" id="2_hkrk6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mptoc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_un84t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.521569, 0.521569, 0.521569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0yb8"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2adh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uwvd"]
+atlas = ExtResource("1_opq80")
+region = Rect2(0, 0, 16, 16)
+
+[node name="InventorySlot" type="Button"]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_mptoc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_un84t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u0yb8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_a2adh")
+script = ExtResource("1_nxbvo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = SubResource("AtlasTexture_7uwvd")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+theme_override_fonts/font = ExtResource("2_hkrk6")
+theme_override_font_sizes/font_size = 5
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 2

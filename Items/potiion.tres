@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=6 format=3 uid="uid://h5xu7vik5p05"]
+
+[ext_resource type="Script" path="res://Items/item_effects/item_effect_heal.gd" id="1_2sgo8"]
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_edyp4"]
+[ext_resource type="Texture2D" uid="uid://dp2jwvebqmsvs" path="res://Items/Sprites/LifePot.png" id="2_jvkjr"]
+[ext_resource type="AudioStream" uid="uid://ehm63pq5hq7k" path="res://Assets/Audios/hp-up.wav" id="2_u3u1t"]
+
+[sub_resource type="Resource" id="Resource_r35u4"]
+script = ExtResource("1_2sgo8")
+heal_amount = 2
+sound = ExtResource("2_u3u1t")
+use_description = ""
+
+[resource]
+script = ExtResource("1_edyp4")
+name = "Potion"
+description = "This potion refills your health"
+texture = ExtResource("2_jvkjr")
+effects = Array[Resource("res://Items/item_effects/item_effect.gd")]([SubResource("Resource_r35u4")])

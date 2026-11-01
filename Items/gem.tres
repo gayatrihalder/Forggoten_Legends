@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dpet8jp6dl55i"]
+
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_vbw3o"]
+[ext_resource type="Texture2D" uid="uid://d2ecnuurkfnvv" path="res://Items/Sprites/GemGreen.png" id="2_mlyi0"]
+
+[resource]
+script = ExtResource("1_vbw3o")
+name = "Gem"
+description = "This is a valueable gem"
+texture = ExtResource("2_mlyi0")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://5ygsth8ni4cn"]
+
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_7alc7"]
+[ext_resource type="Texture2D" uid="uid://dnob5qp6sf2w6" path="res://Items/Sprites/Rock.png" id="2_u1idc"]
+
+[resource]
+script = ExtResource("1_7alc7")
+name = "Rock"
+description = "who doesn't love collecting rocks?"
+texture = ExtResource("2_u1idc")

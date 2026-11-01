@@ -1,0 +1,214 @@
+[gd_scene load_steps=19 format=3 uid="uid://dh2ceh8g2n8aq"]
+
+[ext_resource type="Script" path="res://GUI/pause_menu/pause_menu.gd" id="1_rcued"]
+[ext_resource type="FontFile" uid="uid://c764wo8r0kdvp" path="res://Assets/NormalFont.ttf" id="2_wvaph"]
+[ext_resource type="Texture2D" uid="uid://bi2ca1bxrttct" path="res://Assets/button_normal.png" id="3_un5u2"]
+[ext_resource type="Texture2D" uid="uid://dpj8l2ei87pcs" path="res://Assets/button_hover.png" id="4_fgcya"]
+[ext_resource type="Texture2D" uid="uid://35y3us487oj6" path="res://Assets/button_pressed.png" id="5_6d0ad"]
+[ext_resource type="Texture2D" uid="uid://c88exkx4qanf4" path="res://Assets/nine_path_panel.png" id="6_gqwlo"]
+[ext_resource type="Script" path="res://GUI/pause_menu/inventory/scripts/inventory_ui.gd" id="7_ffxpc"]
+[ext_resource type="PackedScene" uid="uid://b52p27lbitr3i" path="res://GUI/pause_menu/inventory/inventory_slot.tscn" id="7_ygmb7"]
+[ext_resource type="Resource" uid="uid://bm7x6rt3ybuaw" path="res://GUI/pause_menu/inventory/player_inventory.tres" id="8_m2c6b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a3dip"]
+texture = ExtResource("3_un5u2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y3xgl"]
+texture = ExtResource("4_fgcya")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rm0h"]
+texture = ExtResource("5_6d0ad")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erfit"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5mba"]
+texture = ExtResource("3_un5u2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wfoe"]
+texture = ExtResource("4_fgcya")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtc67"]
+texture = ExtResource("5_6d0ad")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sl42"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8b1f8"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("6_gqwlo")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 128
+script = ExtResource("1_rcued")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.788194
+anchor_top = 0.87037
+anchor_right = 0.944444
+anchor_bottom = 0.938272
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wvaph")
+theme_override_font_sizes/font_size = 8
+text = "[PAUSED]"
+
+[node name="itemdescription" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.788
+anchor_top = 0.87037
+anchor_right = 0.944444
+anchor_bottom = 0.938272
+offset_left = -202.944
+offset_top = -28.9999
+offset_right = -104.0
+offset_bottom = -16.0001
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.5
+offset_top = 55.0
+offset_right = -24.5
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_save" type="Button" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wvaph")
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxTexture_a3dip")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y3xgl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6rm0h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_erfit")
+text = "Save"
+
+[node name="Button_load" type="Button" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wvaph")
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxTexture_q5mba")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0wfoe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qtc67")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sl42")
+text = "Load"
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 176.0
+offset_bottom = 112.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8b1f8")
+
+[node name="Panel" type="Panel" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+columns = 6
+script = ExtResource("7_ffxpc")
+data = ExtResource("8_m2c6b")
+
+[node name="InventorySlot" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="Control/PanelContainer/GridContainer" instance=ExtResource("7_ygmb7")]
+layout_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 4

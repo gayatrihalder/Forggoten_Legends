@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd4wof33mydei"]
+
+[ext_resource type="Script" path="res://Levels/Scripts/player_spwan.gd" id="1_8b6qk"]
+[ext_resource type="Texture2D" uid="uid://re282f55nm8p" path="res://Player/Sprites/spritesheet.png" id="1_bc8ud"]
+
+[node name="PlayerSpwan" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_8b6qk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.298039, 1, 0.431373, 0.796078)
+position = Vector2(0, -5.594)
+texture = ExtResource("1_bc8ud")
+hframes = 8
+vframes = 9
+frame = 32
